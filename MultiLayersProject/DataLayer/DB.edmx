@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BanorteBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BanorteBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Empleado">
           <Key>
-            <PropertyRef Name="idEmpleado" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="idEmpleado" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="apellidos" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="direccion" Type="varchar" MaxLength="200" Nullable="false" />
@@ -55,16 +55,15 @@
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BanorteBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Empleado">
           <Key>
-            <PropertyRef Name="idEmpleado" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="idEmpleado" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellidos" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
@@ -109,7 +108,7 @@
           </AssociationSet>
           <FunctionImport Name="SP_GetEmpleados" ReturnType="Collection(BanorteBDModel.SP_GetEmpleados_Result)" />
           <FunctionImport Name="SP_GetEmpleadosByPage" ReturnType="Collection(BanorteBDModel.SP_GetEmpleadosByPage_Result)">
-            <Parameter Name="INDEXPAGE" Mode="In" Type="Int32" />
+          <Parameter Name="INDEXPAGE" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_GetEmpleados_Result">
@@ -145,7 +144,7 @@
           <EntitySetMapping Name="Empleado">
             <EntityTypeMapping TypeName="BanorteBDModel.Empleado">
               <MappingFragment StoreEntitySet="Empleado">
-                <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="apellidos" ColumnName="apellidos" />
                 <ScalarProperty Name="direccion" ColumnName="direccion" />
