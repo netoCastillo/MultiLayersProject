@@ -99,6 +99,10 @@
       <Project>{17b9f99b-56cc-453f-93ff-7df9cc81ffb8}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{b22b08d8-42cb-45b9-8836-b21c014d64f2}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj">
       <Project>{2148a36c-5694-4da6-91a3-1cbe96b2ea50}</Project>
       <Name>ServiceLayer</Name>

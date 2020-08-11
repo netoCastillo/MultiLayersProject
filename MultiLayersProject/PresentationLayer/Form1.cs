@@ -21,6 +21,16 @@ namespace PresentationLayer
         {
             dataGridView1.DataSource =  BusinessLayer.Employe.Get();
             textBox1.Text =  ServiceLayer.Service.GetPost();
+
+            dataGridView2.DataSource = BusinessLayer.Employe.GetByPage(5);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = null;
+            
+            dataGridView2.DataSource = BusinessLayer.Employe.GetByPage(5);
         }
     }
 }
