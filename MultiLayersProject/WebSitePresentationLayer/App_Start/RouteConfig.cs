@@ -16,7 +16,7 @@ namespace WebSitePresentationLayer
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Employee", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "EmployeePage", id = UrlParameter.Optional }
             );
         }
     }
